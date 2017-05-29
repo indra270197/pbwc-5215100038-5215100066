@@ -17,10 +17,10 @@
         <h3>Our Social Networks</h3>
       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
         <div>
-          <img src="<?php echo base_url(); ?>assets/img/icons/facebook.png" width="32" alt="Facebook">
-          <img src="<?php echo base_url(); ?>assets/img/icons/twitter.png" width="32" alt="Twitter">
-          <img src="<?php echo base_url(); ?>assets/img/icons/linkedin.png" width="32" alt="LinkedIn">
-        <img src="<?php echo base_url(); ?>assets/img/icons/rss.png" width="32" alt="RSS Feed">
+          <img src="img/icons/facebook.png" width="32" alt="Facebook">
+          <img src="img/icons/twitter.png" width="32" alt="Twitter">
+          <img src="img/icons/linkedin.png" width="32" alt="LinkedIn">
+        <img src="img/icons/rss.png" width="32" alt="RSS Feed">
       </div>
       </div>
       <div class="col-footer col-md-4 col-xs-6">
@@ -39,12 +39,12 @@
 
   <!-- Javascripts -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>assets/js/jquery-1.9.1.min.js"><\/script>')</script>
-  <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+  <script src="js/bootstrap.min.js"></script>
 
 <!-- Scrolling Nav JavaScript -->
-<script src="<?php echo base_url(); ?>assets/js/jquery.easing.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/scrolling-nav.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/scrolling-nav.js"></script>
 
 </body>
 </html>
