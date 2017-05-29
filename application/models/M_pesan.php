@@ -28,10 +28,12 @@ class M_pesan extends CI_Model{
 	$this->db->delete($table);
 	}
 
-	function getTransaksi(){
+
+	function getTransaksi($nama){
     $this->db->select('*'); //memeilih semua field
     $this->db->from('pesan'); //memeilih tabel
-    $this->db->join('type', 'pesan.type = type.type'); //join tabel pesan field type dengan tabel type field yang punya isi sama
+    //$this->db->join('type', 'pesan.type = type.type'); //join tabel pesan field type dengan tabel type field yang punya isi sama
+		$this->db->where('username', $nama);
 
     $query = $this->db->get(); //simpan database yang udah di get alias ambil ke query
         if ($query->num_rows() >0){ //membuat data masuk ke $data kemudian masuk lagi ke array $hasiltransaksi
@@ -39,7 +41,7 @@ class M_pesan extends CI_Model{
                 # code...
                 $hasilTransaksi[] = $data;
             }
-        return $hasilTransaksi; //hasil dari semua proses ada dimari
+        return $hasilTransaksi; //hasil dari semua proses ada di $hasilTransaksi
         }
 			}
 

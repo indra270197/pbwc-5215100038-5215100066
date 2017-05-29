@@ -17,14 +17,14 @@ class Login extends CI_Controller{
 		$password = $this->input->post('password');
 		$where = array(
 			'username' => $username,
-			'password' => md5($password)
+			'password' => sha1($password)
 			);
 		$cek = $this->m_login->cek_login("admin",$where)->num_rows();
 		if($cek > 0){
 
 			$data_session = array(
 				'admin' => $username,
-				'status' => "login"
+				'statusadmin' => "loginadmin"
 				);
 
 			$this->session->set_userdata($data_session);
@@ -37,6 +37,7 @@ class Login extends CI_Controller{
 	}
 
 	function logout(){
+		//$this->session->unset_userdata('admin','statusadmin');
 		$this->session->sess_destroy();
 		redirect(base_url('login'));
 	}

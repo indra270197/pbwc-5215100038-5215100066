@@ -13,7 +13,7 @@ class Form extends CI_Controller{
 	}
 
 	function aksi(){
-		$this->form_validation->set_rules('username','Username','trim|required|min_length[5]|max_length[12]');
+		$this->form_validation->set_rules('username','Username','trim|required|min_length[5]|max_length[12]|is_unique[user.username]');
 		$this->form_validation->set_rules('password','Password','trim|required');
 		$this->form_validation->set_rules('konfir_password','Konfirmasi Password','trim|required|matches[password]');
 		$this->form_validation->set_rules('email','Email','trim|required|valid_email');
@@ -36,7 +36,7 @@ class Form extends CI_Controller{
 
     $data = array(
     'username' => $username,
-    'password' => md5($password),
+    'password' => sha1($password),
 		'email' => $email,
 		'nohp' => $nohp
     );

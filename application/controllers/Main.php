@@ -9,6 +9,11 @@
          {
 
           parent::__construct();
+          $this->load->library('form_validation');
+          $this->load->model('m_tanya');
+          if($this->session->userdata('status') != "user_login"){
+      			redirect(base_url("user_login"));
+      		}
 
          }
 
@@ -20,6 +25,10 @@
 
           $this->load->view('main/home');
 
+          $data['tanya'] = $this->m_tanya->tampil_data()->result();
+          $this->load->view('v_user_tanya',$data);
+
+
           $this->load->view('main/footer');
 
          }
@@ -29,6 +38,24 @@
          $this->load->view('main/header');
 
          $this->load->view('v_about_us');
+
+         $this->load->view('main/footer');
+         }
+
+         public function service(){
+
+         $this->load->view('main/header');
+
+         $this->load->view('v_service');
+
+         $this->load->view('main/footer');
+         }
+
+         public function contact(){
+
+         $this->load->view('main/header');
+
+         $this->load->view('v_contact');
 
          $this->load->view('main/footer');
          }

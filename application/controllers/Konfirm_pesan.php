@@ -4,6 +4,9 @@ class Konfirm_pesan extends CI_Controller{
 
 	function __construct(){
 		parent::__construct();
+		if($this->session->userdata('statusadmin') != "loginadmin"){
+			redirect(base_url("login"));
+		}
     $this->load->model('m_pesan');
     $this->load->helper('url');
 	}
@@ -21,15 +24,21 @@ class Konfirm_pesan extends CI_Controller{
   function update(){
 	$id = $this->input->post('id');
 	$username = $this->input->post('username');
-	$type = $this->input->post('type');
+	$jenis_metode = $this->input->post('jenis_metode');
+	$cakupan = $this->input->post('cakupan');
 	$tanggal = $this->input->post('tanggal');
+	$nohp = $this->input->post('nohp');
+	$luas = $this->input->post('luas');
   $lokasi = $this->input->post('lokasi');
   $status = $this->input->post('status');
 
   $data = array(
 		'username' => $username,
-		'type' => $type,
+		'jenis_metode' => $jenis_metode,
+		'cakupan' => $cakupan,
 		'tanggal' => $tanggal,
+		'nohp' => $nohp,
+		'luas' => $luas,
     'lokasi' => $lokasi,
     'status' => $status
 	);

@@ -17,7 +17,7 @@ class User_login extends CI_Controller{
 		$password = $this->input->post('password');
 		$where = array(
 			'username' => $username,
-			'password' => md5($password)
+			'password' => sha1($password)
 			);
 		$cek = $this->m_user_login->cek_login("user",$where)->num_rows();
 		if($cek > 0){
@@ -39,7 +39,8 @@ class User_login extends CI_Controller{
 	}
 
 	function logout(){
+		//$this->session->unset_userdata('nama','status');
 		$this->session->sess_destroy();
-		redirect(base_url('user_login'));
+		redirect(base_url('awal'));
 	}
 }
